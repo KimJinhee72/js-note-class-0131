@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수 선언하기3</title>
+  </head>
+  <body>
+    <script>
+      var now = new Date();//이 선언이 이루어져야 다음 것을 할수 있으니 중요함
+      // console.log(now);
+      // document.write(now);
+      // var display = now.getDate();//날짜 숫자만 나옴
+      // var display =now.toLocaleString('en-US')//원하는 미국식 날짜 및 시간 형식으로 변환, 한국을 원하면('ko-KR')로 표현하면 된다
+      //지금 접속한 곳의 시간을 반영 밑에다 var선언하면 위에 미국설정을 해둬도 한국설정이 됨 toTimeString을 쓰면 한국표준시나옴
+      var display = now.toLocaleTimeString("en-US", { timeZone: "America/New_York" });
+      // 현재날짜
+      var displayDate = now.toLocaleDateString();
+      // document.write(displayDate);
+      // document.write(display);
+      document.write(`오늘은 ${displayDate}이고, 지금 시간은 ${display}입니다.`);
+    </script>
+  </body>
+</html>

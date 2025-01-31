@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수 선언하기2</title>
+  </head>
+  <body>
+    <script>
+      //변수 선언과 할당
+      var name = "그린컴퓨터";
+      // console.log(name);
+      var name = "Geen"; //변수를 재할당을 함 geen이 덮어씀
+      console.log(name);
+      // 변수 재할당
+      var age = 25;
+      // console.log(age);
+      age = 30; //30만 남게됨  그래서 var를 계속 쓰면 위험하니 조심히 써야함, 그래서 let(재할당은 가능), const이 한 번 쓰니 쓰게 됨
+      console.log(age);
+      // 변수 연산
+      var x = 10;//변수로 바꾸면서 달라지 내용 변경해 다르게 표시하게 만듦
+      var y = 3;//변수로 바꾸면서 달라지 내용 변경해 다르게 표시하게 만듦      
+      var total = x + y;//숫자는 +로 더해짐 8
+      var totaldub = x * y// 곱해짐 30
+      console.log(total);
+      console.log(totaldub);
+      document.write(`x와 y를 더한 금액은 ${total}이고,<br>`)//백틱은 html내용을 안에서 쓸수 있음
+      document.write(`x와 y를 곱한 금액은 ${totaldub}이다.`)//위아래 내용이 html에 줄바꿔 나옴 
+    </script>
+  </body>
+</html>
