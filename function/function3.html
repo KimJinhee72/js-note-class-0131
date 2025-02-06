@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수3</title>
+    <style>
+       .slider{
+        width: 50%;
+        display: flex;
+       }
+       .slider img{
+        width: 100%;
+       }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img src="images/KakaoTalk_20250206_121558644.jpg" alt="이미지1" />
+        <img src="images/KakaoTalk_20250206_121558644_01.jpg" alt="이미지2" style="display: none" />
+        <img src="images/KakaoTalk_20250206_121558644_02.jpg" alt="이미지3" style="display: none" />
+  
+    </div>
+    <script>
+        let currentIndx = 0
+        const images = document.querySelectorAll('.slider img')
+        // console.log(images);
+        setInterval(function showSlideImg(){
+            // 현재 이미지 숨김처리
+            images[currentIndx].style.display = "none"
+            // 다음 이미지 인데스로 연결(마지막 이미지를 넘으면 0으로 다시)
+            currentIndx = (currentIndx + 1 ) % images.length
+            // 다음이미지를 보이게 하기
+            images[currentIndx].style.display = "block"
+        }, 1000);
+        // 슬라이더 되는 함수 만들기
+        function showSlideImg(){
+            // 현재 이미지 숨김처리
+            images[currentIndx].style.display = "none"
+            // 다음 이미지 인데스로 연결(마지막 이미지를 넘으면 0으로 다시)
+            currentIndx = (currentIndx + 1 ) % images.length
+            // 다음이미지를 보이게 하기
+            images[currentIndx].style.display = "block"
+        }
+        // showSlideImg()//부른적 없어 꼭 불러주기
+        setInterval(showSlideImg, 1000);//showSlideImg는 매개변수로 함수를 포함해 setInterval에서 실행
+
+    </script>
+</body>

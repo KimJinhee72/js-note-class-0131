@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <button onclick=" greeting('하경미')">클릭</button><!--불러주는 것을 html에서도 가능함 onclick=" greeting()"으로  -->
+    <button onclick=" greeting('김진희')">안녕</button><!-- 함수 재사용 -->
+    <script>
+        let name = prompt('이름을 넣어주세요')
+        function greeting(name){//greeting(매개변수name)만든 함수명
+            let massage1 = `안녕하세요 ${name}`
+            alert(massage1)            
+        }
+        // greeting()//앞이든 뒤든 한번은 불러줘야함
+        greeting(`${name}`)
+        
+
+        // document.write(`${massage}`)
+    </script>
+</body>
+</html>

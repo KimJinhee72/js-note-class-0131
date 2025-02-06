@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수2</title>
+    <style>
+        #menu{
+            display: none;
+        }
+        #menu.open{
+            display: block;
+        }
+    </style>
+</head>
+<!-- html에 미리 매게변수를 삽입했을때 -->
+    <!-- <body>
+        <button onclick="toggleMenu()">메뉴열기/닫기</button>
+
+        <script>
+            function toggleMenu(){
+                
+            }
+        </script>
+    </body> -->
+<!-- html에 미리 매게변수를 삽입하지 않고 보통 html작성하고 script에서 선언하면서 담아쓰려면 -->
+<body>  
+    <button class="toggleMenu" >메뉴열기/닫기</button> <!--<button onclick="toggleMenu()">메뉴열기/닫기</button>--> 
+    <nav id="menu">
+        <ul>
+            <li>홈</li>
+            <li>서비스</li>
+            <li>연락처</li>
+        </ul>
+    </nav>
+    <!-- 배경색 변경 -->
+     <!-- html에서 선언했으니 선언의 인수를 여기서onclick="changeColor()"-> onclick="changeColor('red')"  변경하고,  
+       html 선언없이 script에서 let으로 function밖에다 선언하면 let 변수명 = 인수(changeColor('red'))해야함  -->
+    <button onclick="changeColor('red')">배경색 red 변경</button>
+    <button onclick="changeColor('blue')">배경색 blud변경</button>
+    <button onclick="changeColor('#fff')">배경색 blud변경</button>
+    <script>
+    // 토글메뉴
+        // document.querySelector('.toggleMenu')//하나만 쓰려면 굳이 let선언 필요없음
+        // let  toggleMent = document.querySelector('.toggleMenu')//onclick="toggleMenu()"과는 다르게 let선언해 document.querySelector('.toggleMenu')을 담아서 function을 따로 써야함 
+        // let menu = document.querySelector('#menu')
+        // toggleMenu.addEventListener('click' , function(){
+        //     menu.classList.toggle('open')
+        // })
+        let  toggleMent = document.querySelector('.toggleMenu')
+        let menu = document.querySelector('#menu')
+        function toggleMenu(){
+            menu.classList.toggle('open')
+        }        
+        toggleMent.addEventListener("click", toggleMenu);
+        // 배경색 변경
+        // function changeColor(color){
+        //     // alert('click')
+        //     document.body.style.backgroundColor = color            
+        // }
+        function changeColor(color){
+            if(document.body.style.backgroundColor === color){
+                document.body.style.backgroundColor = ""
+            } else{
+                document.body.style.backgroundColor = color
+            }            
+        }
+    </script>
+       
+    
+</body>
+</html>

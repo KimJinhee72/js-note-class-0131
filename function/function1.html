@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수1</title>
+</head>
+<body>
+    <!-- <script>
+        function add(a , b, c) { //a,b,c내가 정해 주는 매게변수           
+            console.log(a);
+            console.log(b);
+            
+            let sum = a + b + c           
+            console.log(sum);
+        }
+        add(4, 7 , 1)//console.log 아무 것도 없는 것은 불러주지 않아서 앞이든 뒤든 선언해 주어야 한다        
+    </script> -->
+    <script>
+        function add(a , b, c) { //a,b,c내가 정해 주는 매개변수           
+            console.log(a);
+            console.log(b);
+            
+            let sum = a + b + c
+            // return sum//반화값이 밖에서도 사용할 수 있게 반환한 값임
+            // console.log(sum);
+            return a - b - c
+        }console.log(add(50 , 10, 10));
+        // add(4, 7 , 1)//console.log 아무 것도 없는 것은 불러주지 않아서 앞이든 뒤든 선언해 주어야 한다
+        // add결과 값을 함수가 안에 있으니 호출하고 반환값을 함수에 저장한다.
+        let result = add(4 , 7, 9)//add(a,b,c)의 매개변수를 쓰면 function값이 따라오게됨 
+        let result1 = add(5 , 5, 5)
+        document.write(result)//그래서 선언할때 매개변수add(4,7,9)을 썼지만 기본add(a,b,c)익명함수매개변수로 인식하여 함수식 내용이 출력됨
+        document.write(result1)
+    </script>
+       
+    
+</body>
+</html>
