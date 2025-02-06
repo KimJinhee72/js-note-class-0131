@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교연산자 예제</title>
+</head>
+<body>  
+    <h2>로그인</h2>
+    <form action="#">
+        <label for="username">username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">password:</label>
+        <input type="text" id="password" name="password"><br>
+        <button type="button" id="loginBt">LOGIN</button>
+    </form> 
+     <p id="massage"></p>
+    <script>
+        // 저장된 사용자 아이디랑 비밀번호를 더미데이터에 저장함
+        const storeUser = {
+            username:"haglass",
+            password:"1234",            
+        }
+        // 버튼저장
+        const loginBt = document.querySelector('#loginBt')
+        // 유효성 검사 메시지 저장
+        const massage = document.querySelector('#massage')
+        loginBt.addEventListener('click' , function(){
+            const username = document.querySelector('#username').value
+            // console.log(username);
+            const password = document.querySelector('#password').value
+            // 입력된 데이터와 더미데이터 값비교
+            // 입력되는 데이터를 저장
+            // 입력된 데이터와 더미데이터 값비교
+            // if(username === storeUser.username && password === storeUser.password){
+            //     massage.textContent = '로그인성공!'
+            // }
+            // else{
+            //     massage.textContent = '정보가 일치하지 않습니다.'
+            // }
+            
+            // // console.log(password);
+            if(username !== storeUser.username && password !== storeUser.password){
+                massage.textContent = '이름과 비밀번호가 일치하지 않습니다.'
+            }
+            else if(username !== storeUser.username){
+                massage.textContent = '이름이 일치하지 않습니다.'
+            }
+            else if(password !== storeUser.password){
+                massage.textContent = '비밀번호가 일치하지 않습니다.'
+            }
+        })
+    </script>
+    
+   
+</body>
+</html>

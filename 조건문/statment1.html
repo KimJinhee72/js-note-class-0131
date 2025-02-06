@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+        let usernum = prompt("숫자를 입력하세요.")
+        if(usernum !== null && usernum !=""  ){//뭐든 입력하면(아무것도 입력값이 없는게 아니면)
+            if(usernum % 3 === 0){
+                console.log('3의배수입니다.')
+            }else{
+                console.log('3의배수가 아닙니다.')                
+            }
+        }
+        else{
+            alert('입력을 하지않았습니다. 다시 입력해 주세요.')
+        }
+        
+
+    </script>
+</body>
+</html>

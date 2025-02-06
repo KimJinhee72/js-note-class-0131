@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for/break문 구구단</title>
+    <style>
+        div{
+          display: inline-block;/*때문에 간격 띄울수 있음*/
+          background-color: antiquewhite;
+          margin-left: 20px;
+          padding: 10px;
+        }
+      </style>
+  
+</head>
+<body>
+    <script>
+        for(let i = 2 ; i < 10 ; i++){
+            document.write(`<div>`)
+            document.write(`<h3>${i}단</h3>`)
+            for(let a = 1 ; a <= 9 ; a++){
+                // console.log(a);
+                document.write(`${i} x ${a} = ${i * a}<br>`)//변수를 선언했기 때문 결과 값주기 위해 ${i * a} 안에서 산술해야함
+            } 
+            document.write(`</div>`)       
+            if(i === 3) break
+        }
+    </script>
+</body>
+</html>

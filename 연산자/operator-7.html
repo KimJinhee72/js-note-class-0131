@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산자 and연산자</title>
+</head>
+<body>  <!-- AND 둘 다 맞아야 참으로 표시됨 if내용이 뜸, 거짓내용이면 else-->
+    <h2>AND연산자 (&&) 예제</h2>
+    <!-- <p id="demo"></p>  
+    <script>
+        let age = 10
+        let mission = true;
+        if(age >= 18 || mission){
+            document.querySelector('#demo').textContent = '당신은 성인이고, 권한이 있습니다.' 
+        }
+        else{
+            document.querySelector('#demo').textContent = '당신은 성인이 아니고, 권한이 없습니다.' 
+        }
+    </script> -->
+    <h2>회원가입 가능여부</h2>
+    <p id="result"></p>  
+    <script>
+        let age1 = 19
+        let mission1 = true;
+        if(age1 >= 18 && mission1){
+            document.querySelector('#result').textContent = '회원가입이 가능합니다.' 
+        }
+        else{
+            document.querySelector('#result').textContent = '회원가입이 불가능합니다.' 
+        }
+    </script>   
+</body>
+</html>

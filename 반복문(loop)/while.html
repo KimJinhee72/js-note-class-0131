@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문 조건을 만족할 때까지</title>
+</head>
+<body>
+    <h2>10이상의 숫자를 입력하세요</h2>
+    <input type="number" name="number" id="numberInput" placeholder="숫자를 입력하세요">
+    <button onclick="checkNum()">로그인</button><!-- checkNum 함수명 정의 한번 불러줌 -->    
+    <!-- <script>
+        function checkNum(){
+            // let num = document.querySelector('#numberInput').value//('#numberInput')만 쓰면 input tag내용이 반영되는데 원하는 값만 쓰려면 
+            // ('#numberInput').value를 써 줘야한다
+            // 문자열을 숫자로 바꾼다.
+            let num = parseInt(document.querySelector('#numberInput').value)
+            while ( num < 10 || isNaN(num)){//숫자인지 아닌지 확인하는 블리언(참거짓판단하는 명령어)
+                // console.log(num);
+                // num이 10보다 작거나 숫자가 아닌 경우
+                num = parseInt(prompt('10이상의 숫자를 입력하세요!'))
+            }
+            document.write(`조건만족!! 입력한 숫자 : ${num}`)
+        }
+        
+//     </script> -->
+<!-- // </body>
+// </html> --> 
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건에 만족할때까지 반복</title>
+  </head>
+  <body>
+    <h2>10이상의 숫자를 입력하세요</h2>
+    <input type="number" id="numberInput" placeholder="숫자를 입력하세요" />
+    <button onclick="checkNum()">확인</button>
+    <script>
+      function checkNum() {
+        // parseInt() 문자열을 숫자로 바꾼다.
+        let num = parseInt(document.querySelector("#numberInput").value);
+        // console.log(num);
+        while (num < 10 || isNaN(num)) {
+          // num이 10보가 작거나 숫자가 아닌경우
+          num = parseInt(prompt( "10이상의 숫자를 입력하세요!"  ))
+        }
+        document.write(`조건 만족!! 입력한 숫자 : ${num} `)
+
+      }
+    </script>
+  </body>
+</html>

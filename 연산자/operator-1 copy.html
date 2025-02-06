@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산술연산자</title>
+</head>
+<body>
+    <script>
+        let x = 11;
+        let y = 5;
+        // 더하기
+        let sum = x + y;
+        console.log(sum)
+        // 빼기
+        let difference = x - y
+        document.write(difference)/*확인방법으로 잘 쓰지는 않음*/
+        console.log(difference)
+        // 곱하기
+        let multiful = x * y
+        console.log(multiful)
+        // 나누기
+        let divide = x / y
+        console.log(divide);
+        // 나머지
+        let remainder = x % y//x를 y로 나눈 나머지를 저장
+        console.log(remainder);
+        // ++증가 연산자& --감소연산자
+        let count = 5
+        // count++ //식이 없기에 그냥 +1이됨
+        // console.log(count);
+        count--
+        console.log(count);//위에 두고 하면 6->5가되고 위에 주석처리하니 count값에서 -1되어 4가 됨 하나하나씩 순차적으로 실행되기에        
+        // 전위 후위 차이
+        let a = 5
+        let b = a++ 
+        console.log(a , b );// b=5(a++이 반영되기도 전에 b가 먼저 실행됨), a=6(a++이 반영됨)로 나옴
+        let x1 = 5
+        let y1 = ++x1
+        console.log(x1 , y1 )// x1=6(++a이 먼저 반영됨), 그다음 y1가 실행되어 같은 6의 값이나옴
+    </script>
+</body>
+</html>
