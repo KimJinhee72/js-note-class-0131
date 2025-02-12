@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표함수</title>
+</head>
+<body>
+    <script>
+    // function add(a,b){
+    //     return a +b  ;
+    // }
+    // function add(a,b){
+    //     a +b  ;
+    // }
+    //화살표 함수 변경(function 대신에 씀) 더 짧고 간단함
+    // add(a,b) => a + b //한줄 일때 {}와 return생략가능 그러나 제대로 된 식이 아니라 화살표밑~나옴
+    // const add = ( a , b ) => a + b
+    // // 1.매개변수가 하나일 때
+    // const square = (x) => x * y
+    //  console.log(square(20));//일때는 y값이 정의 내려지지 않았다고 함
+    // const square1 = (x , y) => x * y
+    //  console.log(square(20 , 2));//정의도 하고 변수에 숫자도 콘솔로그에 담았으나 결과값 40이 나옴
+    // const square2 = (x , y , c) => x * y * c
+    //  console.log(square(20 , 2));//일때는 c이 정의는 있고 c값이 없기에 nan이라고 뜸
+    // // 2.매개변수가 여러 줄일 때 {}씀
+    const greet = (name) => {
+        return `안녕 , ${name}`; //b. 그래서 정의하는데 {}썼으니  return 써야       
+    }
+    console.log(greet("철수"));//a.확인해 보고 싶은 greet()를 콘솔로그에 넣기 그리고 변수는 정하면 값이 나옴 but {}내용이 없으면 function이 없다함
+    
+    </script>
+</body>
+</html>

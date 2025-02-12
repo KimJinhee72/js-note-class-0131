@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabchangecolor</title>
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+      }
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+      ul{
+        list-style: none;
+        width: 300px;
+        margin: 100px auto;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        background-color: antiquewhite;
+      }
+      ul li{
+        list-style: none;
+        border: 1px solid #ccc;
+        width: calc(100% / 3 );
+      }
+      ul li:nth-child(2){
+        border-left: none;
+        border-right: none;
+      }
+      #result{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 3px solid #ccc;
+        margin: auto;
+      }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" id="green" data-color="green">Green</a></li>
+        <li><a href="#" id="orange" data-color="orange">Orange</a></li>
+        <li><a href="#" id="purple" data-color="purple">Purple</a></li>
+  
+    </ul>
+    <div id="result">
+        <!-- js 색변경 -->
+    </div>
+
+    <script>
+        // querySelectorAll을 해줘야 함
+        const licks = document.querySelectorAll("ul>li>a")
+        // console.log(licks);
+
+        // links를 배열로 인식하므로 하나하나 설정하기 위해
+        licks.forEach(function (item , index) {
+            // console.log(item);
+            // console.log(index);
+
+            // 함수안의 인수로 add이벤트를 해주어야함
+            item.addEventListener("click" , function(){
+                // console.log(item);
+
+                // console.log(this); 
+                // this는 <a href="#" id="green" data-color="green">Green</a>니 
+                // getAttribute:즉 a안에 요소중 "data-color"를 가져오겠다.
+                changeBg(this.getAttribute("data-color")) 
+            })
+        })
+        // 바탕색 변경하는 함수
+        // changeBg(this.getAttribute("data-color")) = changeBg(color로 지정)
+        function changeBg(color){
+            //querySelector하는 것과 같은 개념
+            const bg = document.getElementById("result") 
+            bg.style.backgroundColor = color
+
+        }
+    </script>
+</body>
+</html>

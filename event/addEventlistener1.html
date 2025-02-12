@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventlistener1</title>
+    <style>
+        .active{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">클릭</button>
+    <button class="btn">클릭1</button>
+    <button class="btn">클릭2</button>
+    <button class="btn">클릭</button>
+    <button class="btn">클릭1</button>
+    <button class="btn">클릭2</button>
+    <button class="btn">클릭</button>
+    <button class="btn">클릭1</button>
+    <button class="btn">클릭2</button>
+</body>
+    <script>
+        const btns = document.querySelectorAll('.btn');
+        btns.forEach(function (btn) {
+        // console.log(btn);
+        btn.addEventListener("click", function () {
+          console.log(btn);
+
+          // btn.style.backgroundColor = "red";
+          btn.classList.toggle("active");
+        });
+      });
+
+
+        
+    </script>
+</html>

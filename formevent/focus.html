@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>focus</title>
+    <style>
+        :root{
+            --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            --border-radius-l: 10px;
+            --border-radius-m: 8px;
+            --border-radius-s: 6px;
+        }
+        body{
+            height: 100vh;/*화면높이값*/
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .login-container{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: var(--border-radius-l);
+            box-shadow: var(--box-shadow);
+            width: 300px;
+            text-align: center;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: var(--border-radius-s);
+            border: 2px solid #ddd;
+            outline: none;
+        }
+        input:focus{
+            border-color: blue;
+            background-color: aqua;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: blue;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>로그인</h2>
+        <input type="text" id="username" placeholder="아이디 입력">
+        <input type="password" id="password" placeholder="비밀번호 입력">
+        <button id="loginBtn">로그인</button>
+    </div>
+    <script>
+        const username = document.querySelector("#username")
+        const userpw = document.querySelector("#password")
+        username.addEventListener("focus" , ()=>{
+            console.log("아이디 입력 포커스됨");
+            username.style.borderColor = "blue"
+            username.style.backgroundColor = "red"//가능하나 코드가 길어져 css권장
+        })
+        username.addEventListener("blur" , ()=>{
+            console.log("아이디 입력 blur됨");
+            
+        })
+        userpw.addEventListener("focus" , ()=>{
+            console.log("비밀번호 입력 포커스됨");
+            
+        })
+        userpw.addEventListener("blur" , ()=>{
+            console.log("비밀번호 입력 blur됨");
+            
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click textcolor</title>
+    <style>
+        .colorchange{            
+            color: blue;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnColor">글자색변경</button>
+    <p class="txtP">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum autem nulla consequatur accusamus et voluptate quisquam quasi eos nihil corporis, eveniet inventore at corrupti, recusandae facere cum provident quaerat quos!
+    </p>
+    <script>
+        //btnColor , txtp를 변수에 저장하기
+        const btnColor = document.querySelector("#btnColor")
+        const txtP = document.querySelector(".txtP")
+        // console.log(btnColor);
+
+        //style로 color변경
+        // btnColor.addEventListener("click", function(){
+        //     txtP.style.color = 'red'
+        // })
+
+        //classList.toggle로 colorchange class 추가하여 변경하기
+        // btnColor.addEventListener("click", function(){
+        //     txtP.classList.toggle("colorchange")
+        // })
+
+        //글자 랜덤 색변경
+        btnColor.addEventListener("click",function(){
+            // 배열로 다 담기(여기만 손대면 칼라를 랜덤으로 쓸수 있음)
+            const colors = ["red", "blue", "green", "pink", "skyblue" ,"yellow","hotpink"]
+            // Math내장객체
+            //Math.random()- 0과 1사이에 무작위 소수를 반환한다.
+            // Math내장객체안에 random을 쓸 것임
+            // console.log(Math.random());            
+
+            // Math.floor() - 소수점 이하를 버리고 가장 가까운 정수로 내림한다.
+            // console.log(Math.floor(Math.random()));
+
+            // 무작위로 수를 주기위해 colors의 인덱스 번호를 randomIndex 담아둠
+            const randomIndex = Math.floor(Math.random() * colors.length)
+            // console.log(colors.length)
+            // console.log(Math.random() * colors.length)
+            // console.log(randomIndex)
+
+            //[]안에 인덱스 번호를 주었기에
+            const randomColor = colors[randomIndex]
+            // console.log(randomColor);
+
+            //쓰면 click시 랜덤으로 색상이 변함
+            txtP.style.color = randomColor
+
+
+        })
+
+       
+    </script>
+</body>
+</html>

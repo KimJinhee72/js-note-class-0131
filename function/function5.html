@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수5- 재사용</title>
+    <style>
+       .content{
+        padding: 10px;
+        margin-top: 10px;
+        display: none;
+        border: 1px solid #ccc;
+
+       }
+    </style>
+</head>
+<body>
+    <button id="btn1">박스열기1 </button>
+    <button id="btn2">박스열기2 </button>
+    <button id="btn3">박스열기3 </button>
+    <div id="box1" class="content">박스내용1</div>
+    <div id="box2" class="content">박스내용2</div>
+    <div id="box3" class="content">박스내용3</div>
+    <script>
+    //재사용할 열기닫기 기능 함수 만들기
+    function show(id){
+        console.log(id)
+        let element = document.querySelector(id)//querySelector 또는 getElementById 해도 됨
+        // console.log(element)
+        if(element.style.display === "none" || element.style.display === "" ){
+            element.style.display = "block"
+        }else{
+            element.style.display = "none"
+        }
+    }
+    // 걱 버튼1을 클릭했을때 
+    let btn1 = document.querySelector('#btn1') 
+    btn1.addEventListener("click" , function(){
+        show("#box1")
+    })//addEventListener는 function을 따로 써줄 필요가 없음
+    let btn2 = document.querySelector('#btn2') 
+    btn2.addEventListener("click" , function(){
+        show("#box2")
+    })//addEventListener는 function을 따로 써줄 필요가 없음
+    let btn3 = document.querySelector('#btn3') 
+    btn3.addEventListener("click" , function(){
+        show("#box3")
+    })//addEventListener는 function을 따로 써줄 필요가 없음
+    
+    </script>
+</body>

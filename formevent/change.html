@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change</title>
+    <style>
+        .bo{
+            background-color: 
+        }
+        /* :root{
+            --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            --border-radius-l: 10px;
+            --border-radius-m: 8px;
+            --border-radius-s: 6px;
+        }
+        body{
+            
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+         
+    </style>
+</head>
+<body>
+    <h1>항목선택</h1>
+    <label for="mycheckbox">체크박스</label>
+    <input type="checkbox" name="mycheckbox" id="mycheckbox"><!--for id 가 같아서 어디 누르던 체크가 됨-->
+    <p class="status">
+        <!-- js출력 -->
+    </p>
+    <script>
+        const checkbox = document.querySelector("#mycheckbox")
+        const status = document.querySelector(".status")
+        checkbox.addEventListener("change" , function(){
+            if(checkbox.checked){
+                // console.log(checkbox.checked);//true값 나타남
+                status.textContent = "체크박스 선택됨" 
+            }else{
+                status.textContent = "체크박스 선택이 해제됨"
+            }
+        })
+    </script>
+
+</body>
+</html>

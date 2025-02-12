@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click 이벤트</title>
+</head>
+<body>
+    <button class="clickBt">클릭하세요</button>
+    <p class="displayTxt">
+        <!-- js출력 -->
+    </p>
+    <script>
+        //변수정장
+        const clickBT = document.querySelector(".clickBt")
+        const displayTxt = document.querySelector(".displayTxt")
+        clickBT.addEventListener("click" , function(event){
+            // console.log(clickBT);//변수담으려면 ""쓰지 않는다 ""는 글씨를 쓴것
+            // html <p class="displayTxt">안에 글쓰는 법
+            // displayTxt.innerHTML = `안녕하세요`
+
+            // event or e 변수로 써야 addEventListener의  속성을 알 수 있음
+            // 다른것을 쓰면 내가 알아 볼수가 없음
+            console.log(event);
+            console.log(event.type);
+            console.log(`type : ${event.type}`);
+            // clientX,Y->브라우저 내부좌표
+            console.log(event.clientY);
+            console.log(`clientY : ${event.clientY}`);
+            console.log(event.height);
+            console.log(`height : ${event.height}`);
+            // pageX,Y->전체 문서 내부좌표(스크롤영향받음)
+            console.log(`pageX : ${event.pageX}`);
+            console.log(`pagey : ${event.pagey}`);
+            // screenX,Y->사용자의 화면(모니터) 기준 좌표
+            console.log(`screenX : ${event.screenX}`);
+            console.log(`screeny : ${event.screeny}`);            
+        })
+
+        //더블클릭
+        clickBT.addEventListener("dblclick" , function(event){
+            displayTxt.innerHTML = `안녕하세요`
+        })
+    </script>
+</body>
+</html>

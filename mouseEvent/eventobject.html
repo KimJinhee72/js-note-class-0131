@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event object</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text">
+    </form>
+    <script>
+        const inputel = document.querySelector('input')
+        inputel.addEventListener('keydown' , function(event){
+            event.preventDefault();//해줘야 log쓸수 있음
+            console.log(event)
+            console.log(event.key);            
+            console.log(`keyCode : ${event.keyCode}`);
+            console.log(`ctrlKey : ${event.ctrlKey}`);
+            console.log(`altKey : ${event.altKey}`);
+            console.log(`shiftKey : ${event.shiftKey}`);
+            
+        })
+    </script>
+</body>
+</html>
