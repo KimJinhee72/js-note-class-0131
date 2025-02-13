@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>submit이벤트</title>
+</head>
+<body>
+    <h1>submit이벤트</h1>
+    <form id="myForm">
+        <label for="name">이름:</label>
+        <input id="name" type="text" />
+        <br />
+        <label for="email">이메일:</label>
+        <input id="email" type="text" />
+        <br />
+        <button type="submit">로그인</button>
+      </form>
+      <div id="output">
+        <!-- js출력 -->
+      </div>
+      <script>
+        const form = document.querySelector("#myForm")
+        const output = document.getElementById("myForm")
+        form.addEventListener("submit" , function(e){
+            // alert("wjdqhwpcnf")
+            //번쩍 거리면 function(e)넣고 e.preventDefault()해줘야함
+            e.preventDefault()
+            const nameE = document.querySelector("#name") 
+            const namevalue = nameE.value
+            const emailE = document.querySelector("#email")
+            const emailValue = emailE.value
+            // console.log(nameE);
+            output.innerHTML = 
+            `<p>이름:<strong>${namevalue}</strong></p>
+            <p>이메일:<strong>${emailValue}</strong></p>`
+        })
+      </script>
+</body>
+</html>
