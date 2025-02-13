@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>색변경</button>
+    <script>
+        const btn = document.querySelector("button")
+        // 색변경 함수
+        function random(number){//random함수 명이 없으면 한번 밖에 못씀
+            // Math.floor(Math.random())//컴퓨터 랜덤수를 정수로 만드는법 Math.floor는 나머지 버리기
+            return Math.floor(Math.random() * (number + 1))
+            // console.log(Math.floor(Math.random() * (number + 1)));
+            
+        }
+        btn.addEventListener("click" , function(){
+            const randomCol = `rgb(${random(255)}, ${random(255)},${random(255)})`
+            document.body.style.backgroundColor = randomCol
+        })
+    </script>
+</body>
+</html>

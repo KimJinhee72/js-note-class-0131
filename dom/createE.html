@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <!-- <img src="images/KakaoTalk_20250213_123653974.png" alt="">
+    <img src="images/KakaoTalk_20250213_123653974_01.png" alt=""> -->
+    <button id="addItembtn">아이템추가</button>
+    <script>
+        const addBtn = document.querySelector("#addItembtn")
+        const list = document.querySelector("#list")
+        addBtn.addEventListener("click" ,  ()=>{
+            // li태그생성
+            const newItem = document.createElement("li")            
+            // console.log(newItem);
+            newItem.textContent = "item4"
+            list.appendChild(newItem)
+            // li 태그안에 클라스명 추가
+            newItem.setAttribute("class" , "item4")
+            newItem.setAttribute("id" , "good")
+            const newImg = document.createElement("img")
+            console.log(newImg);
+            newImg.setAttribute("id", "redCup" ,"class", "good")
+            newImg.setAttribute("src", "images/KakaoTalk_20250213_123653974.png" )
+            newImg.setAttribute("alt", "빨간컵" )
+            newImg.setAttribute("id", "redCup" , "class", "good" ,"src", "images/KakaoTalk_20250213_123653974.png", "alt", "빨간컵" )
+            list.appendChild(newImg)
+        })
+        
+    </script>
+</body>
+</html>
