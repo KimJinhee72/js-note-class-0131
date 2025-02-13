@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.naver.com">네이버</a>
+    <script>
+        const aEL = document.querySelector("a")
+        const href = aEL.getAttribute("href")
+        console.log(aEL);
+
+        aEL.setAttribute("href" , "http://www.google.com")
+        // aEL.innerHTML = `구글`
+        aEL.textContent = `구글`
+        aEL.setAttribute("id", "link")
+        aEL.setAttribute("target", "_blank")
+        
+    </script>
+</body>
+</html>

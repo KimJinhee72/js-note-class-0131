@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=bu, initial-scale=1.0">
+    <title>innerText , innerHTML 프로퍼티</title>
+</head>
+<body>
+    <button class="btninnerText">innerText로 표시</button>
+    <button class="btninnerHTML">innerHTML로 표시</button>
+    <div id="current">
+        <!-- js출력 -->
+    </div>
+    <script>
+        let now = new Date()
+        // console.log(now);
+        const innerT= document.querySelector(".btninnerText")
+        const innerH= document.querySelector(".btninnerHTML")
+        const current= document.querySelector("#current")
+        innerT.addEventListener("click", function(){
+            current.innerText = `<span>${now}</span>`//innerText는 text 다 출력
+        })
+        innerH.addEventListener("click", function(){
+            current.innerHTML = `<span> ${now.toTimeString()}</span> <br>
+            ${now.toDateString()}`//innerHTML은 span태그 만들어 안 택스트만 나옴
+
+        })
+    </script>
+</body>
+</html>
