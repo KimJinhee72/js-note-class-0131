@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 비파괴 매서드</title>
+</head>
+<body>
+    <h1>Array객체 비파괴 매서드</h1>
+    <script>
+        const arr = [1,2,3,4,5]
+        // 1.map() : 각 요소의 함수 적용 후 새 배열 반환
+        console.log(arr);//(5) [1, 2, 3, 4, 5]
+        console.log(`map : ${arr.map(x => x * 2)}`);//기존 arr에서 *출력만 될뿐
+
+        // 2.filter(): 조건 만족하는 요소만 모아서 새 배열로 변환
+        console.log(arr);//(5) [1, 2, 3, 4, 5]
+        console.log(`filter : ${arr.filter(x=> x > 2)}`);//filter : 3,4,5 출력만 될뿐
+        
+        // 3.find() :조건 만족 첫번째 요소 반환
+        console.log(`find :${arr.find(x => x > 3)}`);
+                
+        // 4.indexOf() : 특정 요소(인덱스 몇번째냐) 위치 반환
+        console.log(`indexOf : ${arr.indexOf(4)}`);//0에서 4번째 3출력
+        // 5.includes(): 특정 요소(글자) 있으면 true 없으면false
+        console.log(`includes : ${arr.includes(3)}`);//true
+        // 6.join()
+        console.log(`join : ${arr.join("*")}`)//1*2*3*4*5
+        // 7.forEach
+        arr.forEach(x => console.log(`forEach : ${x*3}`) )
+        
+        
+
+    </script>
+</body>
+</html>

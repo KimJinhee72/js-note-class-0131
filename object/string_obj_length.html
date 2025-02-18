@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string객체</title>
+  </head>
+  <body>
+    <script>
+      // 1.length 속성
+      const str = "Hello, JavaScript";
+      console.log(`1.length: ${str.length}`); //17 공간도 포함되니 참고
+
+      // 2. toUpperCase(), toLowerCase()
+      const text = "Hello";
+      console.log("2. 대문자:", text.toUpperCase()); // HELLO
+      console.log("2. 소문자:", text.toLowerCase()); // hello
+
+      //3.inclues()
+      const email = "user@example.com"
+      console.log(`3. @포함여부 : ${email.includes("@")}`);
+      
+      //4.trim():앞뒤 공백없에는 속성
+      const input = "  hello  "      
+      console.log(`공백제거 : ${input}`);
+      console.log(`공백제거 : ${input.trim()}`);//공백이 없어져 출력되고 
+      console.log(`공백제거 : ${input.trim().length}`);//길이는 5가 되나
+      //  기본값은 남아있음
+      console.log(input.length);//9
+
+      //5.slice()
+      const str2 = "JavaScript"
+      //slice(0,4)0:시작점이나 4는 앞까지 자르라 그래서 0,1,2,3까지 나옴
+      console.log(`부분 문자열 : ${str2.slice(0,4)}`);
+
+      //6.replace()
+      const sentence = "I like Java"
+      console.log(`6.문자열 교체 : ${sentence.replace("Java" , "JavaScript")}`);
+      
+      //7.split()
+      const data = "apple.bananan.orange"
+      console.log(`7. 문자열 분리 : ${data.split("")}`);//나열되지 않고 분리됨
+      
+    </script>
+  </body>
+</html>

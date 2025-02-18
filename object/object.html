@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h1>JavaScript 표준내장 객체예제</h1>
+    <script>
+        // JavaScript 표준내장 객체예제
+        // 1. string 2.Array 3. Date 4.Math
+        // 1.string 내장객체 매서드 행동 속성(property) .뒤에 속성이나 매서드 적음
+        const str = "Hello World"
+        console.log(str.length);//글자 10개 띔 1개 .속성(property=length)
+        console.log(str.toUpperCase())//.매서드(toUpperCase()괄호 필요 행동해야하니)
+        console.log(str.toLowerCase())//.매서드(toUpperCase()괄호 필요 행동해야하니)
+        console.log(str.includes("World"))//()내용이 없어 false=world true=World         
+
+        // 2.Array 내장객체 아주 중요
+        const arr = [1,2,3,4 ] 
+        console.log(arr.length);
+        console.log(arr.push(5));//5를 집어 넣음
+        console.log(arr);//5가 더 들어갔는지 변수로 알아봄
+        console.log(arr.join("="));//1=2=3=4=5더 들어감
+
+        //3. Date 객체
+        const today = new Date()
+        console.log(today.toDateString());//현재 날짜
+        console.log(today.getFullYear());//년도 나타남
+        console.log(today.getMonth() + 1);//월 (0부터) 2월이 되려면 +1이 필요
+
+        //4. Math 객체
+        console.log(Math.PI);//원주율 3.141592653589793
+        console.log(Math.max(10,20,5));//20
+        console.log(Math.min(10,20,5));//5
+        console.log(Math.random());//0~1사이 난수 0과1은출력x 0.25302521830335767 계속 바뀜
+        
+
+        
+
+    </script>
+</body>
+</html>

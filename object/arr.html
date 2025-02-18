@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체</title>
+</head>
+<body>
+    <h1>JavaScript Array 객체 주요 속성과 매서드</h1>
+    <script>
+        const arr = [1,2,3,4,5]
+        console.log(arr);//Array로 자동 인식됨[]
+        // 1.length 속성
+        console.log(`length : ${arr.length}`);//5
+
+        // 2.push(): 배열 끝에 요소를 추가     
+        arr.push(6)
+        console.log(`push : ${arr}`);//1,2,3,4,5,6 6추가됨
+
+        // 3.pop():배열 안의 마지막 요소를 제거
+        arr.pop()
+        console.log(`pop : ${arr}`);//1,2,3,4,5나옴 6지워짐 
+        
+        // 4.shift(): 배열 안의 첫 요소 제거
+        arr.shift() 
+        console.log(`shift : ${arr}`);//2,3,4,5 나옴 1이 지워짐
+        
+        // 5.unshift(): 배열 안의 첫 요소를 넣어 추가하기
+        arr.unshift(8)
+        console.log(`unshift : ${arr}`);//8,2,3,4,5로 나옴
+        
+        // 6.indexOf() : 요소의 위치 반환
+        console.log(`indexof 3 : ${arr.indexOf(3)}`);//숫자 3의 인덱스 번호 나타냄
+        
+        // 7.slicd():배열일부반환
+        console.log(`slice : ${arr.slice(1,4)}`);//2,3,4 나옴 0=1,1=2~4=5 
+
+        // 8.splice(): 배열요소 추가/ 삭제
+        // splice(시작인덱스,삭제 개수,추가할 요소)
+        arr.splice(2,1,99)
+        console.log(`splice : ${arr}`);//8,2,99,4,5나옴 인덱스2번을 99로 바뀜
+        arr.splice(2,2,99,1)
+        console.log(`splice : ${arr}`);//8,2,99,1,5나옴 인덱스2->99 3->1로 바뀜
+        
+        // 9.join() :배열을 문자열로 변화
+        console.log(`join : ${arr.join("==")}`);
+        
+        // 10.forEach() : 각요소에 대해 함수 하나하나 실행-array안의 객체임
+        // forEach() 비파괴적 매서드
+        arr.forEach(function(item){
+            console.log(`forEach : ${item}`);
+            
+        })
+        
+    </script>
+</body>
+</html>
