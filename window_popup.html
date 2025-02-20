@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>문성를 열면 팝업 창이 표시됩니다.</p>
+    <script>
+        function openPopup(){
+            //popup 내가만든이름을 넣어주면 새로고침 되어도 한번만 실행됨
+            let newWindow = window.open("window.html" , "" , "width=500, height=500 , top=0, left=0")
+            if(newWindow == null){
+                alert("팝업이 차단이 되었습니다.")
+            }
+            newWindow.moveBy(200,200)//top=0, left=0에서 (200,200)만큼 감
+            
+        }
+        openPopup()//내가 만든 변수명은 불러줘야함
+    </script>
+    
+</body>
+</html>

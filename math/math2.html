@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위 바위 보 게임</title>
+</head>
+<body>
+    <h1>가위 바위 보 게임</h1>
+    <!-- <img src="images/KakaoTalk_20250219_10011504_1.jpg" alt=""> -->
+    <script>
+        let game = prompt("가위 바위 보 중 선택해 주세요.") 
+        let gameNum
+        switch(game){
+            case "가위" :
+            gameNum = 1 //숫자할당 굳이 할 필요 없음
+            break
+            case "바위" :
+            gameNum = 2 //숫자할당 굳이 할 필요 없음
+            break
+            case "보" :
+            gameNum = 3 //숫자할당 굳이 할 필요 없음
+            break
+            default :
+            alert("잘못 작성 했습니다. 가위 바위 보 중에 선택")
+        }
+        let com = Math.floor(Math.random() * 3) + 1
+        console.log(`랜덤 숫자: ${com}`);
+        // 선택이미지 출력
+        document.write(`본인이 낸 것: ${game} <br>`);        
+        document.write(`${com}`);//html에 없어서 여기서 바로 써서 씀 
+        document.write(`<img src="images/KakaoTalk_20250219_10011504_${com}.jpg" alt="이미지${com}">`)//html에 없어서 여기서 바로 써서 씀 
+        if(gameNum === com){
+            document.write(`<img src="images/KakaoTalk_20250219_100115040_1.jpg" alt="성공이미지">`)
+        }else{
+            document.write(`<img src="images/KakaoTalk_20250219_100115040_2.jpg" alt="실패이미지">`)
+        }
+    </script>
+</script>
+</body>
+</html>

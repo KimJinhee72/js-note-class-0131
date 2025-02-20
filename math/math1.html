@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>당첨자 발표</h1>
+    <script>
+    let seed = prompt("전체 응모자 수")
+    console.log(seed);
+    let picke = Math.floor(Math.random())//무조건 소수점 버림, randum 0.24154등으로 계속 바뀜
+    let picked = Math.floor(Math.random() * seed + 1)//무조건 소수점 버림, randum 0.24154등으로 계속 바뀜 그래서 +1해서 정수 나오려고
+    console.log(picke);//0이나옴
+    console.log(Math.random() * seed + 1);//수+1
+    console.log(picked);//
+    document.write(`전체 인원수 : ${seed} <br>` )
+    document.write(`당첨자 번호 : ${picked}`)
+    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const products = [
+        //     {},
+        //     {},
+        // ]  이 방식으로 씀
+
+        const products = [
+        { name: "노트북", date: new Date(2025, 1, 15) },//0 1월 1 2월
+        { name: "스마트폰", date: new Date(2025, 1, 16) },
+        ] 
+        products.forEach(function(item){
+            console.log(item);
+            console.log(`이름 : ${item.name} 등록일 : ${item.date.toLocaleDateString()}`);              
+            
+        })
+    </script>
+</body>
+</html>
