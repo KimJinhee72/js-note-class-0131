@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax 예제</title>
+  </head>
+  <body>
+    <script>
+      // 1.get 요청으로 데이터 가져오기
+      const xhr = new XMLHttpRequest(); //XMLHttpRequest객체 생성 ajax형식으므로 밑에 const data =JSON.parse(xhr.responseText)필요
+      xhr.open("GET", "data.json", true); //get방식으로 data.json으로 파일요청(비동기 방식) get 대신에 post가 있으면 보내는 것이라 백데이터가 필요함
+      console.log(xhr);
+
+      xhr.onload = function () {
+        // 요청이 완료되면 실행되는 콜백함수(매개 변수,인자등을 받아서 씀)
+        // ### **HTTP 상태 코드 예시:**
+        // - **200:** 요청 성공 (OK)
+        // - **201:** 생성됨 (Created)
+        // - **400:** 잘못된 요청 (Bad Request)
+        // - **401:** 인증 실패 (Unauthorized)
+        // - **404:** 요청한 리소스를 찾을 수 없음 (Not Found)
+        // - **500:** 서버 내부 오류 (Internal Server Error)
+        if (xhr.status === 200) {
+          // console.log(xhr);
+          // 응답 텍스트(JsON형식)으로 객체로 변환
+          const data = JSON.parse(xhr.responseText); //꼭 필요..jason파일 변경을 꼭 담아줘야 함
+          console.log(data); //만하면 user가 따로 있음 user안에 내용을 담아뒀으니
+          console.log(data.users);
+          data.users.forEach((data, index) => {
+            //data 내가 정하는 이름  ,index는 i로도 많이 씀
+            console.log(data);
+            console.log(index);
+            document.write(`ID: ${data.id}, 이름: ${data.name}, 나이: ${data.age} <br>`);//data가 여러개일때 forEach의 내가 정의한 매개변수data로 씀
+          });
+        }
+      };
+      xhr.send();
+      //데이터 보내기
+      const xhr1 = new XMLHttpRequest()
+      xhr1.open("POST" , "submit.php", true)//php풀스텍임 POST(백에 보냄)방식으로 submit.php(회사마다 백이 다름)에 요청(비동기 방식)
+      xhr1.setRequestHeader("content-Type" , "application/json")//setRequestHeader설정하라 요청헤더에 JSON형식 지정--추가되어있음
+      xhr1.onload = function (){
+        if(xhr1.status === 200){
+            console.log("데이터 전송완료");//요청성공시 출력
+            
+        }
+      }
+      xhr1.send(JSON.stringify({"id": 1, "name": "홍길동", "age": 25}))//일부러 XMLHttpRequest이니 json파일로 일부러 변환해 보내져야 함 send이후 꼭 필요함
+    </script>
+  </body>
+</html>

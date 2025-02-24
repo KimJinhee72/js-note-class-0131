@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .person-list {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .person-item {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      .person-item h2 {
+        margin: 0;
+        font-size: 1.2em;
+      }
+      .person-item p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="person-list">
+      <!-- js 출력 -->
+    </div>
+    <script>
+      // 더미데이터
+      let peoples = [
+        { name: "John", age: 30, isStudent: false },
+        { name: "Jane", age: 25, isStudent: true },
+        { name: "Mike", age: 35, isStudent: false },
+        { name: "Emily", age: 28, isStudent: true },
+        { name: "hyn", age: 30, isStudent: false },
+        { name: "Jane2", age: 35, isStudent: true },
+        { name: "Mike3", age: 55, isStudent: false },
+        { name: "Emily4", age: 18, isStudent: true },
+      ];
+      // html에 데이터를 추가하는 함수
+      function displayPeople() {
+        // alert("ghk")
+        const personList = document.querySelector(".person-list");
+        peoples.forEach((people) => {
+          console.log(people);
+          const newP = document.createElement("p");
+          console.log(newP);
+          newP.className = "person-item"; //클라스 이름 부여
+          newP.innerHTML = `
+                <h2>이름: ${people.name}</h2>
+                <p>Age: ${people.age}</p>
+                <p>Student: ${people.isStudent ? "예" : "아니오"}  </p>
+                `;
+          personList.appendChild(newP);
+        });
+      }
+      displayPeople(); //불러줘야함
+    </script>
+  </body>
+</html>

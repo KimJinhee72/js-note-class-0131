@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // json 데이터 중 하나만 출력
+        const xhr = new XMLHttpRequest()
+        xhr.open("GET" , "data1.json" , true)
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                const data = JSON.parse(xhr.responseText)//json파일로 변경을 담음
+                console.log(data);
+                document.write(`이름 : ${data.name} , 나이 : ${data.age}`)//data하나일땐 const 정의 명으로 씀
+            }
+        }
+        xhr.send()//꼭 필요함
+    </script>
+</body>
+</html>
