@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch() 데이터 가져오기</title>
+</head>
+<body>
+    <script>
+        fetch("data1.json")
+         .then(function(response){//response로 매개변수로 data1.json를 읽어 들여 status 200으로 나옴
+            console.log(response);
+            if(!response.ok){
+                throw new Error("네트워크 응답을 받지 못함")
+            }
+            return response.json()//if가 굳이 없어도 되나 설정하면 좋음
+         })
+         .then(function(data){//실행 출력부분
+            console.log(data);
+            
+         })
+         .catch(function(error){//에러
+            // console.log("요청실패:", error);            
+         })
+    </script>
+</body>
+</html>
